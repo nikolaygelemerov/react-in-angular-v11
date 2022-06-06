@@ -1,5 +1,8 @@
 import * as React from "react";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
+import { Button } from "@mui/material";
+
+import { MUIform } from "./MUIform";
 
 export interface IMyComponentProps {
   counter?: number;
@@ -25,18 +28,17 @@ export const ReactComponent: FunctionComponent<IMyComponentProps> = ({
       onClick(stateCounter);
     }
 
-    setStateCounter((prevState) => prevState + 10);
+    setStateCounter((prevState) => prevState + 1);
   }, [stateCounter]);
 
   return (
     <div className="Container">
-      <div className="Container">
-        React Props counter: {propsCounter}
-        <button type="button" onClick={handleClick}>
-          click to increase
-        </button>
-      </div>
-      <div>React State counter: {stateCounter}</div>
+      <Button onClick={handleClick} variant="contained">
+        Click to increase
+      </Button>
+      <p className="Container">Angular Prop counter: {propsCounter}</p>
+      <p>React State counter: {stateCounter}</p>
+      <MUIform />
     </div>
   );
 };
