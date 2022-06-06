@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Paper } from "@mui/material";
 
 import { MUIform } from "./MUIform";
 
@@ -36,8 +36,10 @@ export const ReactComponent: FunctionComponent<IMyComponentProps> = ({
       <Button onClick={handleClick} variant="contained">
         Click to increase
       </Button>
-      <p className="Container">Angular Prop counter: {propsCounter}</p>
-      <p>React State counter: {stateCounter}</p>
+      <Paper sx={{ width: 200, p: 2, mb: 4 }}>
+        <h4 className="Counter">Angular Prop counter: {propsCounter}</h4>
+        <h4 className="Counter">React State counter: {stateCounter}</h4>
+      </Paper>
       <MUIform />
     </div>
   );
